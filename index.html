@@ -5,8 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #map {
+        width: 60vw;
+        height: 80vh;
+        }
+        #container{
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="container">
+    <div id="map"></div>
+    <script>
+        function mapit() {
+        let latlong = {
+          center: new google.maps.LatLng(12.963931306144104, 77.57604270212802),
+          zoom: 12,
+        };
+        let map = new google.maps.Map(document.getElementById("map"), latlong);
+
+        let pos1 = {
+          position: new google.maps.LatLng(
+            12.962911572759788,
+            77.57583255318588
+          ),
+        };
+        let p1 = new google.maps.Marker(pos1);
+        let pos2 = {
+          position: new google.maps.LatLng(
+            12.96014437168296,
+            77.57632330740954
+          ),
+        };
+        let p2 = new google.maps.Marker(pos2);
+        let pos3 = {
+          position: new google.maps.LatLng(
+            12.958744255472945,
+            77.5735462340529
+          ),
+        };
+        let p3 = new google.maps.Marker(pos3);
+        p1.setMap(map);
+        p2.setMap(map);
+        p3.setMap(map);
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA225wP8-zr6dCSri6c_GVUJH6SqbW5pPg&callback=mapit"></script>
 </body>
 </html>
